@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+}
+
+body {
+    padding:0;
+    margin:0;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: center / cover no-repeat url(./background.jpeg)
+}
+
+.container{
+    background: rgba(255, 255, 255, 0.1);
+    color:white;
+    overflow: hidden;
+    border-radius: 15px;
+    backdrop-filter: blur(1px);
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    border-right: 1px solid rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+.calc{
+    display:grid;
+    justify-content: center;
+    align-content: center;
+    max-width:100vw;
+    grid-template-columns: repeat(4, 110px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 120px);
+}
+
+.calc > button{
+    font-size: 30px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    outline: none;
+    color:white;
+    transition: 0.3s;
+}
+
+.buttons, .del{
+    transition: 0s;
+    background-color:transparent;
+}
+
+.calc > button:hover{
+    transition: 0s;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 55, 0, 0.2)
+}
+
+.calc > button:active{
+    background: rgba(255, 255, 255, .5)
+}
+
+.span-double{
+    grid-column: span 2;
+}
+
+.operator , .equals{
+    background-color: rgba(255, 155, 10, 0.2);
+}
+
+.clear, .percent{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.screen {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding:15px;
+    word-wrap: break-word;
+    word-break:break-all;
+}
+
+.screen > .current {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 35px;
+}
+
+.screen > .previous {
+    color: rgba(255, 255, 255, 1);
+    font-size: 30px;
+}
+
